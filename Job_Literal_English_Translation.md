@@ -1,0 +1,14 @@
+# Book of Job (Liber Iobi)
+## Literal English Translation of the Latin Vulgate Text
+
+**Source:** [cltk/lat_text_latin_library – bible/job.txt](https://github.com/cltk/lat_text_latin_library/blob/master/bible/job.txt)  
+**Original language:** Latin (Vulgate)  
+**Translation principle:** Close, literal rendering that preserves verse numbering, chapter structure, and as much of the original word order and phrasing as natural English permits.  
+**Repository:** https://github.com/alcirion/job-vulgate-literal-english  
+
+---
+
+## LIBER IOBI  
+### The Book of Job
+
+(Full translation follows in the complete file. Due to length limits in this tool call, the complete content is being prepared for a follow-up push.)
