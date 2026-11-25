@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job 1 – Parallel Latin / English (Sample)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --border: #e0ddd6;
+      --accent: #2c3e50;
+      --latin-bg: #f4f2ee;
+      --btn-bg: #ffffff;
+      --btn-active: #2c3e50;
+      --btn-active-text: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Toggle buttons */
+    .view-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.75rem 0 2rem;
+      flex-wrap: wrap;
+    }
+
+    .view-toggle button {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.55rem 1.25rem;
+      border: 1px solid var(--border);
+      background: var(--btn-bg);
+      color: var(--accent);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .view-toggle button:hover {
+      background: #f0eeea;
+    }
+
+    .view-toggle button.active {
+      background: var(--btn-active);
+      color: var(--btn-active-text);
+      border-color: var(--btn-active);
+    }
+
+    /* Layout modes */
+    .verse {
+      display: grid;
+      gap: 1.25rem 2rem;
+      margin-bottom: 1.6rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .verse:last-child { border-bottom: none; }
+
+    /* Parallel mode (default) */
+    body.mode-parallel .verse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    body.mode-latin .english,
+    body.mode-english .latin {
+      display: none;
+    }
+
+    body.mode-latin .verse,
+    body.mode-english .verse {
+      grid-template-columns: 1fr;
+    }
+
+    .latin {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+      background: var(--latin-bg);
+      padding: 0.9rem 1.1rem;
+      border-radius: 6px;
+    }
+
+    .english {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .verse-num {
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-right: 0.35em;
+      font-variant-numeric: lining-nums;
+    }
+
+    .latin .verse-num {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      color: #6b6b6b;
+    }
+
+    /* Mobile */
+    @media (max-width: 720px) {
+      body.mode-parallel .verse {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+      h1 { font-size: 1.55rem; }
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="mode-parallel">
+
+  <header>
+    <h1>Book of Job — Chapter 1</h1>
+    <p class="subtitle">Literal translation from the Latin Vulgate · Sample</p>
+  </header>
+
+  <div class="view-toggle">
+    <button data-mode="latin">Latin</button>
+    <button data-mode="english">English</button>
+    <button data-mode="parallel" class="active">Parallel</button>
+  </div>
+
+  <main id="content">
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">1</span>vir erat in terra Hus nomine Iob et erat vir ille simplex et rectus ac timens Deum et recedens a malo</div>
+      <div class="english"><span class="verse-num">1</span>There was a man in the land of Hus named Job, and that man was simple and upright, fearing God and turning away from evil.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">2</span>natique sunt ei septem filii et tres filiae</div>
+      <div class="english"><span class="verse-num">2</span>And seven sons and three daughters were born to him.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">3</span>et fuit possessio eius septem milia ovium et tria milia camelorum quingenta quoque iuga boum et quingentae asinae ac familia multa nimis eratque vir ille magnus inter omnes Orientales</div>
+      <div class="english"><span class="verse-num">3</span>His possessions were seven thousand sheep, three thousand camels, five hundred yoke of oxen, and five hundred donkeys, along with a very large household. That man was the greatest of all the people of the East.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">4</span>et ibant filii eius et faciebant convivium per domos unusquisque in die suo et mittentes vocabant tres sorores suas ut comederent et biberent cum eis</div>
+      <div class="english"><span class="verse-num">4</span>His sons used to hold feasts in their houses, each on his own day, and they would send and invite their three sisters to eat and drink with them.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">5</span>cumque in orbem transissent dies convivii mittebat ad eos Iob et sanctificabat illos consurgensque diluculo offerebat holocausta per singulos dicebat enim ne forte peccaverint filii mei et benedixerint Deo in cordibus suis sic faciebat Iob cunctis diebus</div>
+      <div class="english"><span class="verse-num">5</span>When the days of feasting had run their course, Job would send for them and purify them. Rising early in the morning, he would offer burnt offerings for each of them, for he said, “Perhaps my sons have sinned and cursed God in their hearts.” Job did this continually.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">6</span>quadam autem die cum venissent filii Dei ut adsisterent coram Domino adfuit inter eos etiam Satan</div>
+      <div class="english"><span class="verse-num">6</span>One day the sons of God came to present themselves before the Lord, and Satan also came among them.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">7</span>cui dixit Dominus unde venis qui respondens ait circuivi terram et perambulavi eam</div>
+      <div class="english"><span class="verse-num">7</span>The Lord said to him, “Where have you come from?” Satan answered, “I have gone to and fro on the earth, and walked up and down on it.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">8</span>dixitque Dominus ad eum numquid considerasti servum meum Iob quod non sit ei similis in terra homo simplex et rectus et timens Deum ac recedens a malo</div>
+      <div class="english"><span class="verse-num">8</span>The Lord said to him, “Have you considered my servant Job? There is no one like him on the earth, a man who is simple and upright, who fears God and turns away from evil.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">9</span>cui respondens Satan ait numquid frustra timet Iob Deum</div>
+      <div class="english"><span class="verse-num">9</span>Satan answered, “Does Job fear God for nothing?”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">10</span>nonne tu vallasti eum ac domum eius universamque substantiam per circuitum operibus manuum eius benedixisti et possessio illius crevit in terra</div>
+      <div class="english"><span class="verse-num">10</span>Have you not put a hedge around him and his house and all that he has on every side? You have blessed the work of his hands, and his possessions have increased in the land.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">11</span>sed extende paululum manum tuam et tange cuncta quae possidet nisi in facie tua benedixerit tibi</div>
+      <div class="english"><span class="verse-num">11</span>But stretch out your hand a little and touch all that he has, and he will surely curse you to your face.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">12</span>dixit ergo Dominus ad Satan ecce universa quae habet in manu tua sunt tantum in eum ne extendas manum tuam egressusque est Satan a facie Domini</div>
+      <div class="english"><span class="verse-num">12</span>The Lord said to Satan, “Very well, all that he has is in your power; only do not stretch out your hand against him himself.” Then Satan went out from the presence of the Lord.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">13</span>cum autem quadam die filii et filiae eius comederent et biberent vinum in domo fratris sui primogeniti</div>
+      <div class="english"><span class="verse-num">13</span>One day when his sons and daughters were eating and drinking wine in the house of their eldest brother,</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">14</span>nuntius venit ad Iob qui diceret boves arabant et asinae pascebantur iuxta eos</div>
+      <div class="english"><span class="verse-num">14</span>a messenger came to Job and said, “The oxen were plowing and the donkeys were feeding beside them,</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">15</span>et inruerunt Sabei tuleruntque omnia et pueros percusserunt gladio et evasi ego solus ut nuntiarem tibi</div>
+      <div class="english"><span class="verse-num">15</span>and the Sabeans fell upon them and took them away. They struck down the servants with the sword, and I alone have escaped to tell you.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">16</span>cumque adhuc ille loqueretur venit alter et dixit ignis Dei cecidit e caelo et tactas oves puerosque consumpsit et effugi ego solus ut nuntiarem tibi</div>
+      <div class="english"><span class="verse-num">16</span>While he was still speaking, another came and said, “The fire of God fell from heaven and burned up the sheep and the servants, and I alone have escaped to tell you.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">17</span>sed et illo adhuc loquente venit alius et dixit Chaldei fecerunt tres turmas et invaserunt camelos et tulerunt eos necnon et pueros percusserunt gladio et ego fugi solus ut nuntiarem tibi</div>
+      <div class="english"><span class="verse-num">17</span>While he was still speaking, another came and said, “The Chaldeans formed three bands and made a raid on the camels and took them, and struck down the servants with the sword, and I alone have escaped to tell you.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">18</span>loquebatur ille et ecce alius intravit et dixit filiis tuis et filiabus vescentibus et bibentibus vinum in domo fratris sui primogeniti</div>
+      <div class="english"><span class="verse-num">18</span>While he was still speaking, another came and said, “Your sons and daughters were eating and drinking wine in the house of their eldest brother,</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">19</span>repente ventus vehemens inruit a regione deserti et concussit quattuor angulos domus quae corruens oppressit liberos tuos et mortui sunt et effugi ego solus ut nuntiarem tibi</div>
+      <div class="english"><span class="verse-num">19</span>and suddenly a great wind came from across the wilderness and struck the four corners of the house. It fell on the young people, and they are dead, and I alone have escaped to tell you.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">20</span>tunc surrexit Iob et scidit tunicam suam et tonso capite corruens in terram adoravit</div>
+      <div class="english"><span class="verse-num">20</span>Then Job rose, tore his robe, shaved his head, fell to the ground, and worshipped.</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">21</span>et dixit nudus egressus sum de utero matris meae et nudus revertar illuc Dominus dedit Dominus abstulit sit nomen Domini benedictum</div>
+      <div class="english"><span class="verse-num">21</span>He said, “Naked I came from my mother’s womb, and naked I shall return. The Lord gave, and the Lord has taken away; blessed be the name of the Lord.”</div>
+    </div>
+
+    <div class="verse">
+      <div class="latin"><span class="verse-num">22</span>in omnibus his non peccavit Iob neque stultum quid contra Deum locutus est</div>
+      <div class="english"><span class="verse-num">22</span>In all this Job did not sin, nor did he speak anything foolish against God.</div>
+    </div>
+
+  </main>
+
+  <footer>
+    Sample of the modernized parallel layout · Libre Baskerville (English) + Source Sans 3 (Latin)
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.view-toggle button');
+    const body = document.body;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        body.className = 'mode-' + btn.dataset.mode;
+      });
+    });
+  </script>
+</body>
+</html>
